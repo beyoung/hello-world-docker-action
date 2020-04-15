@@ -16,6 +16,13 @@ jobs:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag "hello-action-2020-04-15"
+    
+    - name: Docker push aliyun
+      run: |
+        docker login --username=1937583471@qq.com --password=${{ secrets.ALCHEMY_ALIYUN_PWD }} && \
+        docker tag hello-action-2020-04-15 registry.cn-beijing.aliyuncs.com/alchemy_studio/demo:0.0.1 && \
+        docker push registry.cn-beijing.aliyuncs.com/alchemy_studio/demo:0.0.1
+      
       
     - name: Docker Push
       uses: opspresso/action-docker@v0.2.8
