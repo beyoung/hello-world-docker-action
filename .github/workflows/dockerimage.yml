@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag "hello-action-2020-04-15"
       
     - name: Docker Push
       uses: opspresso/action-docker@v0.2.8
@@ -26,7 +26,7 @@ jobs:
         PASSWORD: ${{ secrets.Alchemy_Package_Perm }}
         REGISTRY: "docker.pkg.github.com"
         DOCKERFILE: "Dockerfile"
-        IMAGE_NAME: my-image-name:$(date +%s)
+        IMAGE_NAME: "hello-action-2020-04-15"
         TAG_NAME: "v0.0.1"
         LATEST: "true"
 
