@@ -20,8 +20,8 @@ jobs:
     - name: Docker-push-aliyun
       run: |
         docker login --username=1937583471@qq.com --password=${{ secrets.ALCHEMY_ALIYUN_PWD }} registry.cn-beijing.aliyuncs.com
-        docker tag hello-action-2020-04-15 registry.cn-beijing.aliyuncs.com/alchemy_studio/demo:0.0.1
-        docker push registry.cn-beijing.aliyuncs.com/alchemy_studio/demo:0.0.1
+        docker tag hello-action-2020-04-15 registry.cn-beijing.aliyuncs.com/alchemy_studio/demo:0.0.2
+        docker push registry.cn-beijing.aliyuncs.com/alchemy_studio/demo:0.0.2
       
       
     - name: Docker Push
